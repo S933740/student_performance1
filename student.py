@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # Load Dataset
-df = pd.read_csv("student_perf.csv", delimiter=",", header=0)
+df = pd.read_csv(r"student_perf1.csv")
 
 # Debug columns
 st.write("Columns in dataframe:", df.columns.tolist())
