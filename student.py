@@ -3,7 +3,15 @@ import pandas as pd
 import plotly.express as px
 
 # Load Dataset
-df = pd.read_csv("student_perf.csv")
+df = pd.read_csv("student_perf.csv", delimiter=",", header=0)
+
+# Debug columns
+st.write("Columns in dataframe:", df.columns.tolist())
+
+# Convert relevant columns to int
+df["StudentID"] = df["StudentID"].astype(int)
+df["Marks"] = df["Marks"].astype(int)
+df["Attendance"] = df["Attendance"].astype(int)
 
 # Streamlit App Title
 st.title("🎓 Student Performance Dashboard")
