@@ -1,4 +1,4 @@
 streamlit
 pandas
-plotly.express
-IPython.display
+plotly
+ipython
