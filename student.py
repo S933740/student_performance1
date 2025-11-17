@@ -11,6 +11,7 @@ st.write("Interactive analytics for marks & attendance")
 
 st.subheader("📊 Dataset Preview")
 st.dataframe(df.head())
+
 # Sidebar Menu
 menu = st.sidebar.radio(
     "Select an Option",
@@ -30,7 +31,7 @@ if menu == "View Dataset":
 elif menu == "Search by Student ID":
     sid = st.number_input("Enter Student ID", min_value=1)
     result = df[df["StudentID"] == sid]
- if not result.empty:
+    if not result.empty:
         st.success("✔ Student Found")
         st.table(result)
     else:
@@ -43,7 +44,7 @@ elif menu == "Search by Student Name":
         result = df[df["Name"].str.lower().str.contains(name.lower())]
         if not result.empty:
             st.success("✔ Match Found")
- st.table(result)
+            st.table(result)
         else:
             st.error("❌ No matching student found")
 
@@ -87,4 +88,4 @@ elif menu == "Pie Chart (Class Distribution)":
 
 # Footer
 st.markdown("---")
-st.write("Developed with  using *Streamlit & Plotly*")
+st.write("Developed using *Streamlit & Plotly* 🚀")
